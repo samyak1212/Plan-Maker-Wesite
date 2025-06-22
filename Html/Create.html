@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="../src/output.css" rel="stylesheet" />
+        <script src="../Script/script.js"></script>
+        <title>Plan Maker</title>
+    </head>
+    <body class="bg-linear-180 from-gray-950 from-30% to-[#03040c] to-80% text-white font-poppins h-screen w-screen">
+        <nav class="flex bg-gray-900 justify-between items-center h-[8%]">
+            <div class="w-[20%] relative">
+                <div class="absolute top-[-50px] left-0 bg-amber-50 rounded-[50%]">
+                    <img src="../logo-removebg-preview.png" alt="cs" class="w-[120px]" />
+                </div>
+            </div>
+            <ul class="flex justify-center font-semibold text-lg h-full grow">
+                <li>
+                    <a
+                        href="./index.html"
+                        class="px-1.5 mx-1.5 w-[130px] h-[100%] flex justify-center items-center border-[1px] border-t-0 border-gray-900 hover:text-xl hover:border-[1px] hover:border-t-0 hover:border-gray-400 transition-all duration-200 ease-in-out"
+                        >Plans</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="./Create.html"
+                        class="px-1.5 mx-1.5 w-[130px] h-[100%] shadow-md shadow-gray-400 flex justify-center items-center border-[1px] border-t-0 border-gray-900 hover:text-xl hover:border-[1px] hover:border-t-0 hover:border-gray-400 transition-all duration-200 ease-in-out"
+                        >Create</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="./Help.html"
+                        class="px-1.5 mx-1.5 w-[130px] h-[100%] flex justify-center items-center border-[1px] border-t-0 border-gray-900 hover:text-xl hover:border-[1px] hover:border-t-0 hover:border-gray-400 transition-all duration-200 ease-in-out"
+                        >Help</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="./Contact_us.html"
+                        class="px-1.5 mx-1.5 w-[130px] h-[100%] flex justify-center items-center border-[1px] border-t-0 border-gray-900 hover:text-xl hover:border-[1px] hover:border-t-0 hover:border-gray-400 transition-all duration-200 ease-in-out"
+                        >Contact us</a
+                    >
+                </li>
+            </ul>
+            <div class="w-[20%]"></div>
+        </nav>
+        <section class="flex h-[92%] items-stretch">
+            <!-- Left section -->
+            <div class="w-[13%] flex flex-col justify-start items-center border-r-1 border-gray-800">
+                <!-- Card -->
+                <div class="flex flex-col justify-start items-center w-[85%] h-[200px] rounded-xl mt-[70px]"></div>
+            </div>
+
+            <!-- Right section -->
+            <div class="grow flex flex-col p-1 pt-1.5">
+                <div class="pl-1">
+                    <span class="text-4xl font-bold tracking-wide">Create</span><br />
+                    <span class="text-[10px] pl-1 tracking-wide">Last Created at 28/6/2021</span>
+                </div>
+                <hr />
+                <!--Scrolling Form-->
+                <div class="overflow-y-scroll mt-1 scrollbar h-[85%] pl-3 pt-3">
+                    <!--List of data to create plan-->
+                    <ul class="w-[65%] mx-auto">
+                        <!-- Tittle -->
+                        <li class="mb-10">
+                            <h2 class="text-2xl">Tittle</h2>
+                            <input
+                                type="text"
+                                name="planname"
+                                id="create_tittle"
+                                placeholder="Enter your tittle"
+                                class="border-b-[1px] p-2 rounded-sm text-md w-[90%]" />
+                        </li>
+                        <!-- Cover image -->
+                        <li class="mb-13">
+                            <h2 class="text-2xl mb-2">Cover Image</h2>
+                            <input
+                                type="file"
+                                name="image"
+                                id="imageUpload"
+                                accept="image/*"
+                                class="bg-white text-gray-950 font-bold w-[250px] rounded-full p-1 px-2 text-[12px] mb-2 hover:bg-gray-900 hover:text-white transition-all duration-200 ease-in-out hover:text-[13px] active:text-[11px]" />
+                            <div class="w-fit h-fit rounded-2xl overflow-hidden">
+                                <img id="preview" width="400" height="300" />
+                            </div>
+                        </li>
+                        <!-- Member Detials -->
+                        <li class="mb-13 w-[100%]">
+                            <h2 class="text-2xl mb-3">Member details</h2>
+
+                            <div class="bg-gray-900 p-2 rounded-2xl">
+                                <div class="flex justify-between items-center mb-3 text-xl h-[30px]">
+                                    <h3>Member</h3>
+                                    <div class="h-[100%] flex gap-1">
+                                        <button
+                                            class="bg-white text-gray-950 text-xs px-2 py-1 w-[110px] font-bold rounded-2xl hover:bg-gray-950 hover:text-white transition-all duration-200 ease-in-out hover:text-[13px] active:text-[11px]"
+                                            id="create_add_member_btn">
+                                            Add Member
+                                        </button>
+                                        <button
+                                            class="bg-rose-400 text-gray-950 text-xs px-2 py-1 w-[125px] font-bold rounded-2xl hover:bg-red-700 hover:text-white transition-all duration-200 ease-in-out hover:text-[13px] active:text-[11px]"
+                                            id="create_delete_member_btn">
+                                            Delete Member
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- Member container -->
+                                <ul id="create_member_conatiner">
+                                    <!-- <li class="text-sm pb-2 my-2 bg-gray-950 rounded-2xl overflow-hidden">
+                                        <div class="bg-gray-800 p-2 flex justify-between">
+                                            <span>Member 1</span>
+                                           
+                                        </div>
+                                        <div class="px-2">
+                                            <span>Name : </span>
+
+                                            <input
+                                                type="text"
+                                                placeholder="Enter the member name"
+                                                class="border-b-[1px] p-2 rounded-sm text-sm w-[80%]" />
+                                        </div>
+                                        <div class="px-2 mt-2">
+                                            <span>Age :</span>
+                                            <input
+                                                type="number"
+                                                name=""
+                                                id=""
+                                                placeholder="0"
+                                                class="border-b-[1px] p-2 rounded-sm text-sm w-[50px]" />
+                                        </div>
+                                    </li> -->
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mb-13 w-[100%]">
+                            <h2 class="text-2xl mb-3">Timeline</h2>
+
+                            <div class="bg-gray-900 p-2 rounded-2xl">
+                                <div class="flex justify-between mb-3 text-xl h-[30px]">
+                                    <h3>Timeline</h3>
+                                    <div class="h-[100%] flex gap-1">
+                                        <button
+                                            class="bg-white text-gray-950 text-xs w-[110px] px-2 py-1 font-bold rounded-2xl hover:bg-gray-950 hover:text-white transition-all duration-200 ease-in-out hover:text-[13px] active:text-[11px]"
+                                            id="create_add_place_btn">
+                                            Add Place
+                                        </button>
+                                        <button
+                                            class="bg-rose-400 text-gray-950 text-xs px-2 py-1 w-[125px] font-bold rounded-2xl hover:bg-red-700 hover:text-white transition-all duration-200 ease-in-out hover:text-[13px] active:text-[11px]"
+                                            id="create_delete_place_btn">
+                                            Delete Place
+                                        </button>
+                                    </div>
+                                </div>
+                                <ul id="create_places_conatiner">
+                                    <!-- <li class="text-sm pb-2 my-2 bg-gray-950 rounded-2xl overflow-hidden">
+                                        <div class="bg-gray-800 p-2">Place 1</div>
+                                        <div class="px-2">
+                                            <span>Place Name : </span>
+
+                                            <input
+                                                type="text"
+                                                placeholder="Enter the place name"
+                                                class="border-b-[1px] p-2 rounded-sm text-sm w-[80%]" />
+                                        </div>
+                                        <div class="px-2 mt-2">
+                                            <span>Date :</span>
+                                            <input
+                                                type="date"
+                                                name=""
+                                                id=""
+                                                placeholder="0"
+                                                class="border-b-[1px] p-2 rounded-sm text-sm w-[150px]" />
+                                        </div>
+                                    </li> -->
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mb-13">
+                            <h2 class="text-2xl">Plan Details</h2>
+                            <textarea
+                                name="plan details"
+                                id="create_plan_details"
+                                placeholder="Enter plan details"
+                                class="border-b-[1px] p-2 rounded-sm text-xs w-[100%] bg-gray-900 tracking-wider"
+                                rows="5"></textarea>
+                        </li>
+                        <li class="mt-20 text-center">
+                            <button
+                                class="bg-white text-gray-950 text-[20px] w-[150px] h-[40px] px-2 py-1 font-bold rounded-2xl hover:bg-gray-900 hover:text-white transition-all duration-200 ease-in-out hover:text-[21px] active:text-[19px]"
+                                id="create_btn">
+                                Create Plan
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- container 470 -->
+            </div>
+        </section>
+    </body>
+</html>
